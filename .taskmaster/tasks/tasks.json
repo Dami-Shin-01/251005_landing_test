@@ -1,0 +1,258 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Project Setup and Design System Implementation",
+        "description": "Initialize the project repository, set up file structure, and implement the design system based on Yanolja Group's guidelines.",
+        "details": "1. Create GitHub repository\n2. Set up basic file structure (index.html, css/, js/, assets/)\n3. Initialize package.json\n4. Create CSS variables for the design system:\n   - Colors: Primary (#FF385C), Secondary (#00D9FF), Accent (#A855F7), Dark (#0F0F23, #1A1A2E, #16213E), Light (#FFFFFF), Gray Scale (#F7F7F7 ~ #171717)\n   - Typography: Import Inter and Noto Sans KR from Google Fonts\n   - Spacing system: 8px base (0.5rem ~ 8rem)\n   - Border radius: Small (6px), Medium (8px), Large (12px), XL (16px), 2XL (24px), Full (9999px)\n5. Create global CSS reset and base styles\n6. Set up meta tags for SEO and responsive design",
+        "testStrategy": "Verify CSS variables are correctly implemented by testing them in browser dev tools. Ensure file structure follows best practices. Validate HTML with W3C validator. Test meta tags for proper viewport settings.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Navigation Bar Implementation",
+        "description": "Create a fixed navigation bar with auto-hide/show on scroll, mobile hamburger menu, smooth scrolling, and active section highlighting.",
+        "details": "1. Create HTML structure for navigation with links to all sections\n2. Style navigation bar using CSS flexbox\n3. Implement fixed positioning with transition for hide/show\n4. Create hamburger menu for mobile view using CSS and JavaScript\n5. Implement JavaScript for:\n   - Detecting scroll position\n   - Hiding/showing navigation based on scroll direction\n   - Highlighting active section based on scroll position\n   - Smooth scrolling to sections when links are clicked\n6. Ensure responsive design for all screen sizes\n7. Add appropriate ARIA attributes for accessibility",
+        "testStrategy": "Test navigation on all device sizes. Verify smooth scrolling works correctly. Check that active section highlighting updates properly. Test keyboard navigation for accessibility. Verify hamburger menu functions correctly on mobile.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Hero Section Development",
+        "description": "Create a fullscreen hero section with large typography, gradient text effects, CTA buttons, scroll indicator animation, and background gradient animation.",
+        "details": "1. Create HTML structure for hero section with heading, subheading, and CTA buttons\n2. Style hero section to be fullscreen with flexbox centering\n3. Implement gradient text effect using CSS background-clip\n4. Style CTA buttons (View Work, Get in Touch) with hover effects\n5. Create scroll indicator animation using CSS keyframes\n6. Implement background gradient animation with CSS animations\n7. Ensure responsive design for all screen sizes\n8. Add AOS attributes for scroll animations\n\nExample CSS for gradient text:\n```css\n.gradient-text {\n  background: linear-gradient(90deg, #FF385C, #A855F7, #00D9FF);\n  -webkit-background-clip: text;\n  background-clip: text;\n  color: transparent;\n  animation: gradient 8s ease infinite;\n  background-size: 300% 300%;\n}\n\n@keyframes gradient {\n  0% { background-position: 0% 50%; }\n  50% { background-position: 100% 50%; }\n  100% { background-position: 0% 50%; }\n}\n```",
+        "testStrategy": "Test hero section on all device sizes. Verify animations work correctly in different browsers. Check that CTA buttons are properly styled and positioned. Ensure text is readable on all backgrounds. Test scroll indicator functionality.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "About Section Implementation",
+        "description": "Develop the About section with designer introduction text, statistics counter animation, 2-column grid layout, and scroll animations.",
+        "details": "1. Create HTML structure for About section with heading, introduction text, and statistics\n2. Implement 2-column grid layout using CSS Grid\n3. Style text content according to design system\n4. Create statistics counter animation using JavaScript\n5. Add AOS attributes for scroll animations\n6. Ensure responsive design for all screen sizes\n\nJavaScript for counter animation:\n```javascript\nfunction animateCounter(element, target, duration) {\n  let start = 0;\n  const increment = target > 0 ? 1 : 0;\n  const stepTime = Math.abs(Math.floor(duration / target));\n  \n  const timer = setInterval(() => {\n    start += increment;\n    element.textContent = start;\n    if (start >= target) {\n      element.textContent = target;\n      clearInterval(timer);\n    }\n  }, stepTime);\n}\n\n// Initialize counters when they come into view\ndocument.addEventListener('aos:in', ({ detail }) => {\n  if (detail.classList.contains('counter')) {\n    const target = parseInt(detail.getAttribute('data-target'));\n    animateCounter(detail, target, 2000);\n  }\n});\n```",
+        "testStrategy": "Test counter animations to ensure they trigger correctly on scroll. Verify grid layout responds appropriately on different screen sizes. Check that AOS animations work as expected. Ensure text is readable and properly formatted.",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          3
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Services Section Development",
+        "description": "Create the Services section with 3 service cards (UI/UX Design, Web Design, Branding), card hover effects, and responsive grid layout.",
+        "details": "1. Create HTML structure for Services section with heading and 3 service cards\n2. Implement grid layout for cards using CSS Grid\n3. Style cards with icons, titles, and descriptions\n4. Create hover effects for cards (tilt, shadow) using CSS transforms and transitions\n5. Add AOS attributes for scroll animations\n6. Ensure responsive design for all screen sizes\n\nCSS for card tilt effect:\n```css\n.service-card {\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n\n.service-card:hover {\n  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);\n}\n```",
+        "testStrategy": "Test hover effects on different devices. Verify grid layout responds correctly on all screen sizes. Check that icons and text are properly aligned. Ensure AOS animations trigger correctly. Test keyboard focus states for accessibility.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Portfolio Section Implementation",
+        "description": "Develop the Portfolio section with project grid layout, image overlay effects, hover information display, image zoom animations, and at least 3 projects.",
+        "details": "1. Create HTML structure for Portfolio section with heading and project grid\n2. Implement grid layout for projects using CSS Grid\n3. Add at least 3 project items with images and overlay information\n4. Create hover effects for project items (info overlay, image zoom)\n5. Implement lazy loading for project images\n6. Add AOS attributes for scroll animations\n7. Ensure responsive design for all screen sizes\n\nCSS for image zoom and overlay:\n```css\n.portfolio-item {\n  overflow: hidden;\n  position: relative;\n}\n\n.portfolio-item img {\n  transition: transform 0.5s ease;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n\n.portfolio-item:hover img {\n  transform: scale(1.1);\n}\n\n.portfolio-overlay {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.7);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: opacity 0.3s ease;\n}\n\n.portfolio-item:hover .portfolio-overlay {\n  opacity: 1;\n}\n```",
+        "testStrategy": "Test hover effects on different devices. Verify grid layout responds correctly on all screen sizes. Check that overlay information is readable. Test lazy loading functionality. Ensure images load properly and maintain aspect ratios.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Achievements Section Development",
+        "description": "Create the Achievements section with 4 achievement cards, number counter animations, and responsive grid layout.",
+        "details": "1. Create HTML structure for Achievements section with heading and 4 achievement cards\n2. Implement grid layout for cards using CSS Grid\n3. Style cards with numbers, titles, and icons\n4. Create number counter animations using JavaScript\n5. Add AOS attributes for scroll animations\n6. Ensure responsive design for all screen sizes\n\nReuse the counter animation function from Task 4, but modify to work with the achievement cards:\n```javascript\n// Initialize achievement counters when they come into view\ndocument.addEventListener('aos:in', ({ detail }) => {\n  if (detail.classList.contains('achievement-counter')) {\n    const target = parseInt(detail.getAttribute('data-target'));\n    animateCounter(detail, target, 2000);\n  }\n});\n```",
+        "testStrategy": "Test counter animations to ensure they trigger correctly on scroll. Verify grid layout responds appropriately on different screen sizes. Check that AOS animations work as expected. Ensure text is readable and properly formatted.",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          4
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Contact Section Implementation",
+        "description": "Develop the Contact section with 2-column layout (contact information + inquiry form), form validation, and submit button.",
+        "details": "1. Create HTML structure for Contact section with heading, contact information, and form\n2. Implement 2-column layout using CSS Grid\n3. Style contact information (email, phone number)\n4. Create form with name, email, and message fields\n5. Implement form validation using JavaScript\n6. Style submit button with hover effects\n7. Add AOS attributes for scroll animations\n8. Ensure responsive design for all screen sizes\n\nJavaScript for form validation:\n```javascript\nconst contactForm = document.getElementById('contact-form');\n\ncontactForm.addEventListener('submit', (e) => {\n  e.preventDefault();\n  \n  const nameInput = document.getElementById('name');\n  const emailInput = document.getElementById('email');\n  const messageInput = document.getElementById('message');\n  \n  let isValid = true;\n  \n  // Validate name\n  if (nameInput.value.trim() === '') {\n    showError(nameInput, 'Name is required');\n    isValid = false;\n  } else {\n    removeError(nameInput);\n  }\n  \n  // Validate email\n  if (emailInput.value.trim() === '') {\n    showError(emailInput, 'Email is required');\n    isValid = false;\n  } else if (!isValidEmail(emailInput.value)) {\n    showError(emailInput, 'Please enter a valid email');\n    isValid = false;\n  } else {\n    removeError(emailInput);\n  }\n  \n  // Validate message\n  if (messageInput.value.trim() === '') {\n    showError(messageInput, 'Message is required');\n    isValid = false;\n  } else {\n    removeError(messageInput);\n  }\n  \n  if (isValid) {\n    // Form is valid, submit or show success message\n    alert('Form submitted successfully!');\n    contactForm.reset();\n  }\n});\n\nfunction isValidEmail(email) {\n  const re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\n  return re.test(email);\n}\n\nfunction showError(input, message) {\n  const formGroup = input.parentElement;\n  const errorElement = formGroup.querySelector('.error-message') || document.createElement('div');\n  \n  errorElement.className = 'error-message';\n  errorElement.textContent = message;\n  \n  if (!formGroup.querySelector('.error-message')) {\n    formGroup.appendChild(errorElement);\n  }\n  \n  input.classList.add('error-input');\n}\n\nfunction removeError(input) {\n  const formGroup = input.parentElement;\n  const errorElement = formGroup.querySelector('.error-message');\n  \n  if (errorElement) {\n    formGroup.removeChild(errorElement);\n  }\n  \n  input.classList.remove('error-input');\n}\n```",
+        "testStrategy": "Test form validation with various inputs (empty fields, invalid email, etc.). Verify error messages display correctly. Check form layout on different screen sizes. Test form submission and reset functionality. Ensure form is accessible with keyboard navigation.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "AOS Library Integration",
+        "description": "Integrate and configure the Animate On Scroll (AOS) library for scroll-based animations throughout the website.",
+        "details": "1. Include AOS library via CDN or download and include locally\n2. Initialize AOS in JavaScript\n3. Add appropriate AOS attributes to elements throughout the site\n4. Configure global AOS settings (duration, easing, offset)\n5. Test and fine-tune animations\n\nHTML for AOS integration:\n```html\n<!-- Include AOS CSS in head -->\n<link rel=\"stylesheet\" href=\"https://unpkg.com/aos@next/dist/aos.css\" />\n\n<!-- Include AOS JS before closing body -->\n<script src=\"https://unpkg.com/aos@next/dist/aos.js\"></script>\n<script>\n  // Initialize AOS\n  AOS.init({\n    duration: 800,\n    easing: 'ease-in-out',\n    once: true,\n    offset: 100\n  });\n</script>\n```\n\nExample of AOS attributes in HTML:\n```html\n<div data-aos=\"fade-up\" data-aos-delay=\"100\">This will fade up with a delay</div>\n<div data-aos=\"fade-left\" data-aos-duration=\"1000\">This will fade from left with custom duration</div>\n```",
+        "testStrategy": "Test animations on different devices and screen sizes. Verify animations trigger at appropriate scroll positions. Check for any performance issues. Ensure animations enhance rather than detract from user experience. Test with reduced motion preferences enabled.",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Advanced Animation Effects Implementation",
+        "description": "Implement advanced animation effects including card tilt effects, magnetic button effects, and scroll progress indicator.",
+        "details": "1. Create magnetic button effect for CTA buttons\n2. Implement scroll progress indicator\n3. Add card tilt effect for service cards\n\nJavaScript for magnetic button effect:\n```javascript\nconst magneticButtons = document.querySelectorAll('.magnetic-button');\n\nmagneticButtons.forEach(button => {\n  button.addEventListener('mousemove', (e) => {\n    const rect = button.getBoundingClientRect();\n    const x = e.clientX - rect.left - rect.width / 2;\n    const y = e.clientY - rect.top - rect.height / 2;\n    \n    button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;\n  });\n  \n  button.addEventListener('mouseleave', () => {\n    button.style.transform = 'translate(0, 0)';\n  });\n});\n```\n\nJavaScript for scroll progress indicator:\n```javascript\nconst progressBar = document.querySelector('.scroll-progress');\n\nwindow.addEventListener('scroll', () => {\n  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;\n  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;\n  const scrollProgress = (scrollTop / scrollHeight) * 100;\n  \n  progressBar.style.width = `${scrollProgress}%`;\n});\n```",
+        "testStrategy": "Test magnetic button effect on different devices. Verify scroll progress indicator updates correctly. Check card tilt effect for smoothness and performance. Ensure animations work across different browsers. Test with reduced motion preferences enabled.",
+        "priority": "low",
+        "dependencies": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 11,
+        "title": "Responsive Design Implementation",
+        "description": "Ensure the website is fully responsive across all device sizes (Desktop: 1280px+, Tablet: 768px-1024px, Mobile: <768px).",
+        "details": "1. Create responsive breakpoints in CSS\n2. Implement mobile-first approach\n3. Adjust layouts for different screen sizes\n4. Test and fix any responsive issues\n5. Optimize touch targets for mobile\n\nCSS for responsive breakpoints:\n```css\n/* Base styles (mobile first) */\n\n/* Tablet styles */\n@media screen and (min-width: 768px) {\n  /* Tablet-specific styles */\n}\n\n/* Desktop styles */\n@media screen and (min-width: 1280px) {\n  /* Desktop-specific styles */\n}\n```\n\nSpecific adjustments needed:\n- Convert multi-column layouts to single column on mobile\n- Adjust font sizes for readability on smaller screens\n- Ensure proper spacing and margins on all devices\n- Optimize images for different screen sizes\n- Ensure touch targets are at least 44px × 44px for mobile",
+        "testStrategy": "Test on actual devices (phones, tablets, desktops) when possible. Use browser dev tools to test various screen sizes. Check for layout issues, text overflow, and improper spacing. Verify touch targets are appropriately sized on mobile. Test with different orientations (portrait/landscape).",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 12,
+        "title": "Performance Optimization",
+        "description": "Optimize website performance to meet requirements (initial loading time <3s, lazy loading for images, CSS/JS optimization).",
+        "details": "1. Implement lazy loading for images\n2. Minify and combine CSS files\n3. Minify and combine JavaScript files\n4. Optimize image sizes and formats (WebP where supported)\n5. Implement critical CSS for above-the-fold content\n6. Add appropriate caching headers\n\nHTML for lazy loading images:\n```html\n<img src=\"placeholder.jpg\" data-src=\"actual-image.jpg\" alt=\"Description\" class=\"lazy-image\">\n```\n\nJavaScript for lazy loading:\n```javascript\ndocument.addEventListener('DOMContentLoaded', () => {\n  const lazyImages = document.querySelectorAll('.lazy-image');\n  \n  if ('IntersectionObserver' in window) {\n    const imageObserver = new IntersectionObserver((entries, observer) => {\n      entries.forEach(entry => {\n        if (entry.isIntersecting) {\n          const img = entry.target;\n          img.src = img.dataset.src;\n          img.classList.remove('lazy-image');\n          imageObserver.unobserve(img);\n        }\n      });\n    });\n    \n    lazyImages.forEach(img => imageObserver.observe(img));\n  } else {\n    // Fallback for browsers that don't support IntersectionObserver\n    // Simple scroll-based lazy loading\n  }\n});\n```",
+        "testStrategy": "Use Google PageSpeed Insights to measure performance. Test loading time on various network conditions. Verify lazy loading works correctly. Check for render-blocking resources. Measure and optimize Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS).",
+        "priority": "high",
+        "dependencies": [
+          1,
+          3,
+          6,
+          9,
+          11
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 13,
+        "title": "Accessibility Implementation",
+        "description": "Ensure the website meets WCAG 2.1 AA accessibility standards with proper semantic HTML, ARIA attributes, keyboard navigation, and color contrast.",
+        "details": "1. Use semantic HTML elements throughout the site\n2. Add appropriate ARIA attributes where needed\n3. Ensure proper keyboard navigation and focus states\n4. Check and fix color contrast issues\n5. Add skip navigation link\n6. Ensure all interactive elements are accessible\n7. Add alt text to all images\n\nHTML for skip navigation:\n```html\n<a href=\"#main-content\" class=\"skip-link\">Skip to main content</a>\n```\n\nCSS for focus states:\n```css\n:focus {\n  outline: 2px solid #FF385C;\n  outline-offset: 2px;\n}\n\n.skip-link {\n  position: absolute;\n  top: -40px;\n  left: 0;\n  padding: 8px;\n  background-color: #FF385C;\n  color: white;\n  z-index: 100;\n  transition: top 0.3s ease;\n}\n\n.skip-link:focus {\n  top: 0;\n}\n```",
+        "testStrategy": "Use accessibility audit tools (Lighthouse, axe). Test keyboard navigation throughout the site. Check screen reader compatibility. Verify color contrast meets WCAG AA standards. Test with browser extensions that simulate various disabilities. Ensure all interactive elements have appropriate focus states.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 14,
+        "title": "Cross-Browser Testing",
+        "description": "Test the website across all major browsers (Chrome, Firefox, Safari, Edge) to ensure consistent functionality and appearance.",
+        "details": "1. Test on Chrome, Firefox, Safari, and Edge\n2. Check for layout inconsistencies\n3. Verify all animations and interactions work\n4. Test form functionality\n5. Check for CSS compatibility issues\n6. Fix any browser-specific bugs\n\nCommon issues to look for:\n- Flexbox/Grid support differences\n- CSS variable support\n- Animation performance\n- Form styling differences\n- Font rendering differences",
+        "testStrategy": "Create a testing matrix with browsers and features to test. Use browser developer tools to identify and fix issues. Test on actual devices when possible. Use BrowserStack or similar services for comprehensive testing. Document and address any browser-specific issues.",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 15,
+        "title": "Deployment to GitHub Pages",
+        "description": "Deploy the completed website to GitHub Pages for public access and testing.",
+        "details": "1. Ensure all files are properly committed to the repository\n2. Configure GitHub Pages in repository settings\n3. Set up custom domain if needed\n4. Verify deployed site functionality\n5. Add README.md with project information\n\nSteps for GitHub Pages deployment:\n```\n1. Go to repository Settings\n2. Navigate to Pages section\n3. Select main branch as source\n4. Save settings\n5. Wait for deployment to complete\n6. Access site at https://[username].github.io/[repository-name]/\n```\n\nREADME.md template:\n```markdown\n# Web Designer Portfolio Landing Page\n\nA responsive portfolio landing page for web designers based on Yanolja Group's design system.\n\n## Features\n\n- Responsive design for all devices\n- Animated sections and interactions\n- Contact form with validation\n- Performance optimized\n\n## Technologies Used\n\n- HTML5\n- CSS3 (Variables, Flexbox, Grid)\n- Vanilla JavaScript (ES6+)\n- AOS Library\n\n## Live Demo\n\n[View Live Demo](https://[username].github.io/[repository-name]/)\n\n## Development\n\n1. Clone the repository\n2. Open index.html in your browser\n3. Make changes as needed\n\n## License\n\n[MIT](LICENSE)\n```",
+        "testStrategy": "Test the deployed site on various devices and browsers. Verify all links work correctly with the deployed URL. Check that assets (images, CSS, JS) load properly. Test form submission on the live site. Verify performance metrics match local development.",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-10-04T15:43:42.257Z",
+      "updated": "2025-10-04T15:45:37.836Z",
+      "description": "Tasks for master context"
+    }
+  }
+}
