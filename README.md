@@ -8,17 +8,28 @@
 
 **GitHub Repository**: https://github.com/Dami-Shin-01/251005_landing_test
 
-## 🎨 디자인 시스템
+## 📚 디자인 시스템
 
-### 색상 팔레트
-- **Primary**: #FF385C (핑크)
-- **Secondary**: #00D9FF (사이안)
-- **Accent**: #A855F7 (퍼플)
-- **Background**: #0F0F23, #1A1A2E (다크 네이비)
+이 프로젝트의 디자인 시스템은 재사용 가능하도록 문서화되어 있습니다:
 
-### 타이포그래피
-- **영문**: Inter
-- **한글**: Noto Sans KR
+- **[📖 Design System 전체 문서](DESIGN_SYSTEM.md)** - 색상, 타이포그래피, 간격 등 모든 디자인 토큰
+- **[⚡ Cheat Sheet](DESIGN_SYSTEM_CHEATSHEET.md)** - 빠른 참조용 치트시트
+
+다른 프로젝트에도 자유롭게 적용할 수 있습니다!
+
+## 🎨 핵심 디자인 토큰
+
+### 색상
+- **Primary**: #FF385C (핑크) - 주요 액션
+- **Secondary**: #00D9FF (사이안) - 보조 액션
+- **Accent**: #A855F7 (퍼플) - 강조
+- **Background**: #0F0F23, #1A1A2E (다크)
+
+### 폰트
+- **영문**: Inter (Google Fonts)
+- **한글**: Noto Sans KR (Google Fonts)
+
+**💡 전체 디자인 시스템은 [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)에서 확인하세요!**
 
 ## 📋 주요 섹션
 
