@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="전문 웹디자이너 포트폴리오 - UI/UX 디자인, 브랜딩, 웹 개발">
-    <title>Web Designer Portfolio | 웹디자이너 포트폴리오</title>
+    <meta name="description" content="전문 개발자 포트폴리오 - WebApplication, WebSite 개발">
+    <title>Developer Portfolio | 개발자 포트폴리오</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,23 +17,23 @@
     <link rel="stylesheet" href="css/responsive.css">
     
     <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
         <div class="container">
             <div class="nav-brand">
-                <a href="#home">Designer.</a>
+                <a href="#home" aria-label="Home">Developer.</a>
             </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-menu" id="navMenu" aria-label="Main menu">
+                <li><a href="#about" aria-label="About">About</a></li>
+                <li><a href="#services" aria-label="Services">Services</a></li>
+                <li><a href="#portfolio" aria-label="Portfolio">Portfolio</a></li>
+                <li><a href="#achievements" aria-label="Achievements">Achievements</a></li>
+                <li><a href="#contact" aria-label="Contact">Contact</a></li>
             </ul>
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -42,7 +42,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" aria-label="Hero section">
         <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
@@ -66,7 +66,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="about" id="about" aria-label="About section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">About Me</span>
@@ -75,27 +75,27 @@
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right">
                     <p class="lead">
-                        사용자 중심의 디자인으로 브랜드 가치를 높이고,
+                        사용자 중심의 프로그래밍으로 가치를 높이고,
                         기술과 창의성을 결합하여 최상의 디지털 경험을 제공합니다.
                     </p>
                     <p>
                         5년 이상의 경력을 바탕으로 다양한 산업의 기업들과 함께
-                        성공적인 프로젝트를 완수해왔습니다. UI/UX 디자인부터
-                        브랜딩, 웹 개발까지 전 과정을 아우르는 통합 솔루션을 제공합니다.
+                        성공적인 프로젝트를 완수해왔습니다. WebApplication, WebSite 개발부터
+                        Store, 플랫폼 개발까지 전 과정을 아우르는 통합 솔루션을 제공합니다.
                     </p>
                 </div>
                 <div class="about-stats" data-aos="fade-left">
                     <div class="stat-item">
                         <span class="stat-number" data-count="50">0</span>
-                        <span class="stat-label">Projects Completed</span>
+                        <span class="stat-label">Application Projects Completed</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-count="30">0</span>
-                        <span class="stat-label">Happy Clients</span>
+                        <span class="stat-label">Website Projects Completed</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-count="5">0</span>
-                        <span class="stat-label">Years Experience</span>
+                        <span class="stat-label">Platform Projects Completed</span>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services" id="services" aria-label="Services section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Services</span>
@@ -116,9 +116,9 @@
                             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">UI/UX Design</h3>
+                    <h3 class="service-title">Web Application Development</h3>
                     <p class="service-description">
-                        사용자 경험을 최우선으로 하는 직관적이고 매력적인 인터페이스 디자인
+                        사용자 경험을 최우선으로 하는 직관적이고 매력적인 인터페이스 디자인 및 개발
                     </p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
@@ -128,9 +128,9 @@
                             <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Web Design</h3>
+                    <h3 class="service-title">Web Site Development</h3>
                     <p class="service-description">
-                        반응형 웹사이트 디자인으로 모든 디바이스에서 완벽한 경험 제공
+                        반응형 웹사이트 디자인 및 개발으로 모든 디바이스에서 완벽한 경험 제공
                     </p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
@@ -140,9 +140,9 @@
                             <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Branding</h3>
+                    <h3 class="service-title">Platform Development</h3>
                     <p class="service-description">
-                        브랜드 아이덴티티 구축부터 비주얼 시스템까지 통합 브랜딩 솔루션
+                        플랫폼 개발으로 모든 디바이스에서 완벽한 경험 제공
                     </p>
                 </div>
             </div>
@@ -150,7 +150,7 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <section class="portfolio" id="portfolio" aria-label="Portfolio section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Portfolio</span>
@@ -162,8 +162,8 @@
                     <div class="portfolio-image">
                         <img src="https://via.placeholder.com/600x400/1a1a2e/ffffff?text=Project+1" alt="Project 1">
                         <div class="portfolio-overlay">
-                            <h3>E-Commerce Platform</h3>
-                            <p>UI/UX Design, Web Development</p>
+                            <h3>Web Application</h3>
+                            <p>Web Application Development</p>
                             <a href="#" class="portfolio-link">View Project →</a>
                         </div>
                     </div>
@@ -172,8 +172,8 @@
                     <div class="portfolio-image">
                         <img src="https://via.placeholder.com/600x400/1a1a2e/ffffff?text=Project+2" alt="Project 2">
                         <div class="portfolio-overlay">
-                            <h3>Travel App Design</h3>
-                            <p>Mobile UI/UX, Branding</p>
+                            <h3>Web Site</h3>
+                            <p>Web Site Development</p>
                             <a href="#" class="portfolio-link">View Project →</a>
                         </div>
                     </div>
@@ -182,8 +182,8 @@
                     <div class="portfolio-image">
                         <img src="https://via.placeholder.com/600x400/1a1a2e/ffffff?text=Project+3" alt="Project 3">
                         <div class="portfolio-overlay">
-                            <h3>Brand Identity</h3>
-                            <p>Branding, Visual Design</p>
+                            <h3>Platform</h3>
+                            <p>Platform Development</p>
                             <a href="#" class="portfolio-link">View Project →</a>
                         </div>
                     </div>
@@ -193,7 +193,7 @@
     </section>
 
     <!-- Achievements Section -->
-    <section class="achievements" id="achievements">
+    <section class="achievements" id="achievements" aria-label="Achievements section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Achievements</span>
@@ -214,59 +214,27 @@
                 </div>
                 <div class="achievement-card" data-aos="fade-up" data-aos-delay="400">
                     <span class="achievement-number" data-count="98">0</span>
-                    <span class="achievement-label">고객 만족도 (%)</span>
+                    <span class="achievement-label">프로젝트 완수 만족도 (%)</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" aria-label="Contact section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Contact</span>
                 <h2 class="section-title">프로젝트를 시작하세요</h2>
             </div>
             <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right">
-                    <h3>Get in Touch</h3>
-                    <p>새로운 프로젝트에 대해 이야기 나눠보세요.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-label">Email</span>
-                            <a href="mailto:hello@designer.com">hello@designer.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Phone</span>
-                            <a href="tel:+821012345678">+82 10-1234-5678</a>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" data-aos="fade-left">
-                    <div class="form-group">
-                        <input type="text" placeholder="Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                <span class="contact-label">Email</span>
+                <a href="mailto:hello@developer.com">hello@developer.com</a>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Web Designer Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>

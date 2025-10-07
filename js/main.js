@@ -161,6 +161,6 @@ portfolioFilters.forEach(filter => {
 });
 
 // Log page load
-console.log('%c🎨 Web Designer Portfolio', 'color: #FF385C; font-size: 20px; font-weight: bold;');
-console.log('%cDesigned and Developed with ❤️', 'color: #A855F7; font-size: 14px;');
+console.log('%c💻 Developer Portfolio', 'color: #FF385C; font-size: 20px; font-weight: bold;');
+console.log('%cDeveloped with ❤️', 'color: #A855F7; font-size: 14px;');
 

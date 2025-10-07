@@ -6,9 +6,9 @@
 assets/
 ├── images/
 │   ├── portfolio/        # 포트폴리오 프로젝트 이미지
-│   │   ├── project-1.jpg
-│   │   ├── project-2.jpg
-│   │   └── project-3.jpg
+│   │   ├── webapp-1.jpg
+│   │   ├── website-1.jpg
+│   │   └── platform-1.jpg
 │   └── profile/          # 프로필 이미지
 │       └── profile.jpg
 └── icons/                # 아이콘 파일
@@ -40,7 +40,7 @@ assets/
 <img src="https://via.placeholder.com/600x400/1a1a2e/ffffff?text=Project+1" alt="Project 1">
 
 <!-- 변경 후 -->
-<img src="assets/images/portfolio/project-1.jpg" alt="프로젝트 설명">
+<img src="assets/images/portfolio/webapp-1.jpg" alt="웹 애플리케이션 프로젝트">
 ```
 
 ### 2. 프로필 이미지 추가 (선택사항)
